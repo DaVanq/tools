@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="./perfectdrop.js"></script>
+		<script src="./variables.js"></script>
+		<style>
+			.thingy {
+				padding: 0px 10px;
+				font-family: 'Open Sans', sans-serif;
+			}
+			.row.vdivide [class*='col-']:not(:last-child):after {
+				background: #e0e0e0;
+				width: 1px;
+				content: "";
+				display:block;
+				position: absolute;
+				top:0;
+				bottom: 0;
+				right: 0;
+				min-height: 70px;
+			}
+		</style>
+		<title>M.I.C.C.</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header"><a class="navbar-brand" href=".../index.html">LegusX Tools</a></div>
+				<ul class="nav navbar-nav">
+					<li><a href="../index.html">Home</a></li>
+					<li class="dropdown active">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Hordes.io<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Perfect Drop Chance</a></li>
+							<!--<li><a href="#">Page 1-2</a></li>-->
+							<!--<li><a href="#">Page 1-3</a></li>-->
+						</ul>
+					</li>
+					<!--<li><a href="./perfectdrop/index.html">Perfect Drop Chance</a></li>-->
+					<!--<li><a href="../about/index.html">About</a></li>-->
+				</ul>
+			</div>
+		</nav>
+		<div class="jumbotron text-center" style="padding: 100px 25px;font-family: 'Open Sans', sans-serif;">
+			<h1>Maxed Item Chance Calculator</h1>
+			<h4>So that you can feel depressed when you realize that there is only a 1 in 20988 chance that the next Protecteron you pick up will be max.</h4>
+		</div>
+		<div class="row thingy vdivide">
+			<div id="type-selector-div" class="col-sm-4">
+				<br>
+				<label for="type-selector">Select an item type:</label>
+				<select class="form-control" id="type-selector"></select>
+			</div>
+			<div id="item-selector-div" class="col-sm-4">
+				<br>
+				<label for="item-selector">Select an item:</label>
+				<select class="form-control" id="item-selector"></select>
+			</div>
+			<div id="result-div" class="col-sm-4">
+				<h3>Result:</h3>
+				<p id="result-text">There is a 1 in 1 chance that the next Wooden Sword you pick up will have perfect stats.</p>
+			</div>
+		</div>
+	</body>
+</html>
