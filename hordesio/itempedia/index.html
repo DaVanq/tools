@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<title>LegusX Tools - Itempedia</title>
+		<link rel="shortcut icon" href="./legusx-x.ico" type="image/x-icon">
+		<link rel="icon" href="./legusx-x.ico" type="image/x-icon">
+		<style>
+			.thingy {
+				padding: 0px 10px;
+				font-family: 'Open Sans', sans-serif;
+			}
+			.row.vdivide [class*='col-']:not(:last-child):after {
+				background: #e0e0e0;
+				width: 1px;
+				content: "";
+				display:block;
+				position: absolute;
+				top:0;
+				bottom: 0;
+				right: 0;
+				min-height: 70px;
+			}
+			#imageholder {
+				padding: 10px;
+				background-color: #031713;
+				/*border: 2px solid #;*/
+				box-shadow: #031713 0 0 0 2px, #141414 0 0 1px 2px inset, #292828 0 0 7px 4px inset;
+				width: fit-content;
+				height: fit-content;
+			}
+		</style>
+		<script src="./perfectdrop.js"></script>
+		<script src="./variables.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header"><a class="navbar-brand" href="/tools">LegusX Tools</a></div>
+				<ul class="nav navbar-nav">
+					<li><a href="/tools">Home</a></li>
+					<li class="dropdown active">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Hordes.io<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="../../perfectdrop">Perfect Drop Chance</a></li>
+							<li><a href="#">Itempedia</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="jumbotron text-center" style="padding: 100px 25px;font-family: 'Open Sans', sans-serif;">
+			<h1>The Magnificent Itempedia</h1>
+			<h4>To tell you all that random crap about items you wish to know, without having to travel between a billion wiki pages.</h4>
+			<h6><em>Coming soon to an XHordes near you</em></h6>
+		</div>
+		<div class="row thingy vdivide">
+			<div id="type-selector-div" class="col-sm-2">
+				<br>
+				<label for="type-selector">Select an item type:</label>
+				<select class="form-control" id="type-selector"></select>
+				<br>
+				<label for="item-selector">Select an item:</label>
+				<select class="form-control" id="item-selector"></select>
+			</div>
+			<!--<br><br><br><br><br>-->
+			<!--<div id="item-selector-div" class="col-sm-2">-->
+
+			<!--</div>-->
+			<div class="col-sm-2">
+				<h2 id="result-name"></h2><hr>
+				<p id="result-text">Use the dropdown menus on the side to select an item to view</p>
+				<h5 id="minlevel"></h5>
+				<h5 id="class"></h5>
+			</div>
+			<div class="col-sm-6" id="tablecontainer" style="display:none;">
+				<h3>Stat Ranges:</h3>
+				<div class="table-responsive">
+					<table id="stats-table" class="table table-bordered"></table>
+				</div>
+			</div>
+			<div class="col-sm-2"><div id="imageholder" style="display: none; margin: 0 auto;"><img id="item-image"></div></div>
+		</div>
+	</body>
+</html>

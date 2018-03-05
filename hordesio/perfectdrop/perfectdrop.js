@@ -22,9 +22,14 @@ window.onload = function(){
 			option.textContent = stuff.name[i]
 			document.getElementById("item-selector").appendChild(option)
 		}
+		updateList()
 	})
-	document.getElementById("item-selector").addEventListener("change", function(e){
-		try {
+	document.getElementById("item-selector").addEventListener("change", updateList)
+}
+
+var updateList = function(e) {
+	if (typeof e === "undefined") e ={target: document.getElementById("item-selector")}
+	try {
 		let equip = window.equipment[document.getElementById("type-selector").value.toLowerCase()]
 		var level = equip.lvl[equip.name.indexOf(e.target.value)]
 		let statNames = Object.getOwnPropertyNames(equip.stats)
@@ -36,6 +41,5 @@ window.onload = function(){
 		}
 		if (chance === 0) chance = 1
 		document.getElementById("result-text").textContent = "There is a 1 in "+chance+" chance that the next "+e.target.value+" you pick up will have perfect stats."
-		}catch(e){alert(e)}
-	})
+	}catch(e){alert(e)}
 }
